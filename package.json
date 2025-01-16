@@ -2,9 +2,11 @@
   "name": "chrome-extension-rollup-sample",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "cleandep": "rm -rf dist node_modules"
   },
   "keywords": [],
   "author": "",
