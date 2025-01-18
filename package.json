@@ -4,9 +4,11 @@
   "description": "",
   "type": "module",
   "scripts": {
+    "clean": "npm run rmdir dist && npm run cleandep",
+    "rmdir": "node -e \"var fs = require('fs'); try{process.argv.slice(1).map((fpath) => fs.rmdirSync(fpath, { recursive: true }))}catch(err){console.log(err)}; process.exit(0);\"",
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "cleandep": "rm -rf dist node_modules"
+    "cleandep": "rm -rf node_modules"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,6 @@
     "eslint": "8",
     "eslint-config-airbnb": "^19.0.4",
     "rollup": "^4.30.1",
-    "rollup-plugin-chrome-extension": "^3.6.12"
+    "rollup-plugin-copy": "^3.5.0"
   }
 }
